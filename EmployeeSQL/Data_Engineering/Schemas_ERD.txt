@@ -1,0 +1,37 @@
+	1.   departments
+	2    —————————
+	3.   dept_no VARCHAR(100) PK
+	4.   dept_name VARCHAR(100)
+	5.	
+	6.   titles
+             —————————
+             title_id VARCHAR(100) PK
+             title VARCHAR(100)
+	7.	
+	     employees
+	8    —————————
+	9.   emp_no INT PK
+	10.  emp_title_id VARCHAR FK >-< titles.title_id
+	11.  birth_date DATE
+	12   first_name VARCHAR(255)
+	13   last_name VARCHAR(255)
+	14.  sex VARCHAR(1)
+	15.  hire_date DATE
+	16.	
+	17.   dept_manager
+	18.   ————————
+	19.   dept_no VARCHAR(100) FK -< departments.dept_no
+	20.   emp_no INT FK -< employees.emp_no
+	21.	
+	22.	
+	23.    dept_emp
+	24.    ————————
+	25.    emp_no INT FK -< employees.emp_no
+	26.    dept_no VARCHAR(100) FK >- departments.dept_no
+	27.	
+	28.    salaries
+	29.    ———————
+	30.    emp_no INT FK >-< employees.emp_no
+	31.    salary INT 
+	32.	
+	33.	
